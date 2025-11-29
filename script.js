@@ -40,3 +40,15 @@ accordionList.forEach((item) => {
 }
 
 initAccordion();
+
+const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+function scrollToSection(event) {
+  event.preventDefault();
+  const href = this.getAttribute('href');
+  console.log(href)
+}
+
+linksInternos.forEach((link) => {
+  link.addEventListener('click', scrollToSection);
+})
