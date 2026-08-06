@@ -4,7 +4,8 @@
   "description": "Animais Fantasticos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --entry ./js/script.js -o ./main.js --mode production",
+    "dev": "webpack --entry ./js/script.js -o ./main.js --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -13,12 +14,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/RenanStein/animais-fantasticos/issues"
   },
   "homepage": "https://github.com/RenanStein/animais-fantasticos#readme",
   "devDependencies": {
-    "eslint": "^10.8.0"
+    "eslint": "^10.8.0",
+    "webpack": "^5.109.2",
+    "webpack-cli": "^7.2.2"
+  },
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "lodash": "^4.18.1"
   }
 }
