@@ -1,0 +1,24 @@
+{
+  "name": "animais-fantasticos",
+  "version": "1.0.0",
+  "description": "Animais Fantasticos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenanStein/animais-fantasticos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RenanStein/animais-fantasticos/issues"
+  },
+  "homepage": "https://github.com/RenanStein/animais-fantasticos#readme",
+  "devDependencies": {
+    "eslint": "^10.8.0"
+  }
+}
