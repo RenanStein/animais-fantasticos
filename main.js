@@ -1,2 +1,237 @@
-/*! For license information please see main.js.LICENSE.txt */
-(()=>{"use strict";function t(t,e,n){var o=document.documentElement,r="data-outside";function i(a){t.contains(a.target)||(t.removeAttribute(r),e.forEach(function(t){o.removeEventListener(t,i)}),n())}t.hasAttribute(r)||(e.forEach(function(t){setTimeout(function(){o.addEventListener(t,i)})}),t.setAttribute(r,""))}function e(){var t=document.querySelector(".numeros"),e=new MutationObserver(function(t){t[0].target.classList.contains("ativo")&&(e.disconnect(),document.querySelectorAll("[data-numero]").forEach(function(t){var e=+t.innerText,n=Math.floor(e/100),o=0,r=setInterval(function(){o+=n,t.innerText=o,o>e&&(t.innerText=e,clearInterval(r))},25*Math.random())}))});e.observe(t,{attributes:!0})}function n(){var t,e,r="function"==typeof Symbol?Symbol:{},i=r.iterator||"@@iterator",a=r.toStringTag||"@@toStringTag";function c(n,r,i,a){var c=r&&r.prototype instanceof s?r:s,l=Object.create(c.prototype);return o(l,"_invoke",function(n,o,r){var i,a,c,s=0,l=r||[],d=!1,f={p:0,n:0,v:t,a:v,f:v.bind(t,4),d:function(e,n){return i=e,a=0,c=t,f.n=n,u}};function v(n,o){for(a=n,c=o,e=0;!d&&s&&!r&&e<l.length;e++){var r,i=l[e],v=f.p,m=i[2];n>3?(r=m===o)&&(c=i[(a=i[4])?5:(a=3,3)],i[4]=i[5]=t):i[0]<=v&&((r=n<2&&v<i[1])?(a=0,f.v=o,f.n=i[1]):v<m&&(r=n<3||i[0]>o||o>m)&&(i[4]=n,i[5]=o,f.n=m,a=0))}if(r||n>1)return u;throw d=!0,o}return function(r,l,m){if(s>1)throw TypeError("Generator is already running");for(d&&1===l&&v(l,m),a=l,c=m;(e=a<2?t:c)||!d;){i||(a?a<3?(a>1&&(f.n=-1),v(a,c)):f.n=c:f.v=c);try{if(s=2,i){if(a||(r="next"),e=i[r]){if(!(e=e.call(i,c)))throw TypeError("iterator result is not an object");if(!e.done)return e;c=e.value,a<2&&(a=0)}else 1===a&&(e=i.return)&&e.call(i),a<2&&(c=TypeError("The iterator does not provide a '"+r+"' method"),a=1);i=t}else if((e=(d=f.n<0)?c:n.call(o,f))!==u)break}catch(e){i=t,a=1,c=e}finally{s=1}}return{value:e,done:d}}}(n,i,a),!0),l}var u={};function s(){}function l(){}function d(){}e=Object.getPrototypeOf;var f=[][i]?e(e([][i]())):(o(e={},i,function(){return this}),e),v=d.prototype=s.prototype=Object.create(f);function m(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,d):(t.__proto__=d,o(t,a,"GeneratorFunction")),t.prototype=Object.create(v),t}return l.prototype=d,o(v,"constructor",d),o(d,"constructor",l),l.displayName="GeneratorFunction",o(d,a,"GeneratorFunction"),o(v),o(v,a,"Generator"),o(v,i,function(){return this}),o(v,"toString",function(){return"[object Generator]"}),(n=function(){return{w:c,m}})()}function o(t,e,n,r){var i=Object.defineProperty;try{i({},"",{})}catch(t){i=0}o=function(t,e,n,r){function a(e,n){o(t,e,function(t){return this._invoke(e,n,t)})}e?i?i(t,e,{value:n,enumerable:!r,configurable:!r,writable:!r}):t[e]=n:(a("next",0),a("throw",1),a("return",2))},o(t,e,n,r)}function r(t,e,n,o,r,i,a){try{var c=t[i](a),u=c.value}catch(t){return void n(t)}c.done?e(u):Promise.resolve(u).then(o,r)}var i,a,c,u,s,l,d,f,v,m;fetch("https://blockchain.info/ticker").then(function(t){return t.json()}).then(function(t){document.querySelector(".btc-preco").innerText=(1e3/t.BRL.sell).toFixed(4)}).catch(function(t){console.log(t)}),function(){function t(t){t.preventDefault();var e=this.getAttribute("href");document.querySelector(e).scrollIntoView({behavior:"smooth",block:"start"})}document.querySelectorAll('[data-menu="suave"] a[href^="#"]').forEach(function(e){e.addEventListener("click",t)})}(),function(){var t=document.querySelectorAll('[data-anime="scroll"]'),e=.6*window.innerHeight;function n(){t.forEach(function(t){t.getBoundingClientRect().top-e<0?t.classList.add("ativo"):t.classList.contains("ativo")&&t.classList.remove("ativo")})}t.length&&(window.innerHeight,n(),window.addEventListener("scroll",n))}(),function(){var t=document.querySelectorAll('[data-anime="accordion"] dt');function e(t){this.classList.toggle("ativo"),this.nextElementSibling.classList.toggle("ativo")}t.length&&(t[0].classList.add("ativo"),t[0].nextElementSibling.classList.add("ativo"),t.forEach(function(t){t.addEventListener("click",e)}))}(),i=document.querySelectorAll('[data-tab="menu"] li'),(a=document.querySelectorAll('[data-tab="content"] section'))[0].classList.add("ativo"),i.length&&a.length&&i.forEach(function(t,e){t.addEventListener("click",function(){!function(t){var e=a[t].dataset.anime;a.forEach(function(t){t.classList.remove("ativo",e)}),a[t].classList.add("ativo",e)}(e)})}),function(){var t=document.querySelector('[data-modal="abrir"]'),e=document.querySelector('[data-modal="fechar"]'),n=document.querySelector('[data-modal="container"]');function o(t){t.preventDefault(),n.classList.remove("ativo")}t&&e&&n&&(t.addEventListener("click",function(t){t.preventDefault(),n.classList.add("ativo")}),e.addEventListener("click",o),n.addEventListener("click",function(t){t.target===this&&o(t)}))}(),function(){function t(t){var o=function(t){var e=document.createElement("div"),n=t.getAttribute("aria-label");return e.classList.add("tooltip"),e.innerText=n,document.body.appendChild(e),e}(this);n.tooltipBox=o,this.addEventListener("mousemove",n),e.tooltipBox=o,e.element=this,this.addEventListener("mouseleave",e)}document.querySelectorAll("[data-tooltip]").forEach(function(e){e.addEventListener("mouseover",t)});var e={handleEvent:function(){this.tooltipBox.remove(),this.element.removeEventListener("mouseleave",e),this.element.removeEventListener("mousemove",n)}},n={handleEvent:function(t){this.tooltipBox.style.top=t.pageY+20+"px",this.tooltipBox.style.left=t.pageX+20+"px"}}}(),function(){function e(e){var n=this;e.preventDefault(),this.classList.add("active"),t(this,["touchstart","click"],function(){n.classList.remove("active")})}document.querySelectorAll('[data-dropdown=""]').forEach(function(t){["touchstart","click"].forEach(function(n){t.addEventListener(n,e)})})}(),function(){var e=document.querySelector('[data-menu="button"]'),n=document.querySelector('[data-menu="list"]');function o(o){n.classList.add("active"),e.classList.add("active"),t(n,["click","touchstart"],function(){n.classList.remove("active"),e.classList.remove("active")})}["click","touchstart"].forEach(function(t){e.addEventListener(t,o)})}(),u=(c=document.querySelector("[data-semana]")).dataset.semana.split(",").map(Number),s=c.dataset.horario.split(",").map(Number),d=(l=new Date).getDay(),f=l.getHours(),v=-1!==u.indexOf(d),m=f>=s[0]&&f<s[1],v&&m&&c.classList.add("aberto"),function(){function t(){var i;return i=n().m(function t(r){var i,a,c,u;return n().w(function(t){for(;;)switch(t.p=t.n){case 0:return t.p=0,t.n=1,fetch(r);case 1:return i=t.v,t.n=2,i.json();case 2:a=t.v,c=document.querySelector(".numeros-grid"),a.forEach(function(t){var e=o(t);c.appendChild(e)}),e(),t.n=4;break;case 3:t.p=3,u=t.v,console.log(u);case 4:return t.a(2)}},t,null,[[0,3]])}),t=function(){var t=this,e=arguments;return new Promise(function(n,o){var a=i.apply(t,e);function c(t){r(a,n,o,c,u,"next",t)}function u(t){r(a,n,o,c,u,"throw",t)}c(void 0)})},t.apply(this,arguments)}function o(t){var e=document.createElement("div");return e.classList.add("numero-animal"),e.innerHTML="<h3>".concat(t.specie,"</h3><span data-numero>").concat(t.total,"</span>"),e}!function(e){t.apply(this,arguments)}("./animaisapi.json")}()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./js/modules/accordion.js"
+/*!*********************************!*\
+  !*** ./js/modules/accordion.js ***!
+  \*********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initAccordion)\n/* harmony export */ });\nfunction initAccordion() {\n  var accordionList = document.querySelectorAll('[data-anime=\"accordion\"] dt');\n  function activeAccordion(event) {\n    this.classList.toggle(\"ativo\");\n    this.nextElementSibling.classList.toggle(\"ativo\");\n  }\n  if (accordionList.length) {\n    accordionList[0].classList.add(\"ativo\");\n    accordionList[0].nextElementSibling.classList.add(\"ativo\");\n    accordionList.forEach(function (item) {\n      item.addEventListener(\"click\", activeAccordion);\n    });\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/accordion.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/anima-numeros.js"
+/*!*************************************!*\
+  !*** ./js/modules/anima-numeros.js ***!
+  \*************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initAnimaNumeros)\n/* harmony export */ });\nfunction initAnimaNumeros() {\n  function animaNumeros() {\n    var numeros = document.querySelectorAll(\"[data-numero]\");\n    numeros.forEach(function (numero) {\n      var total = +numero.innerText;\n      var incremento = Math.floor(total / 100);\n      var start = 0;\n      var timer = setInterval(function () {\n        start += incremento;\n        numero.innerText = start;\n        if (start > total) {\n          numero.innerText = total;\n          clearInterval(timer);\n        }\n      }, 25 * Math.random());\n    });\n  }\n  function handleMutation(mutation) {\n    if (mutation[0].target.classList.contains(\"ativo\")) {\n      observer.disconnect();\n      animaNumeros();\n    }\n  }\n  var observeTarget = document.querySelector(\".numeros\");\n  var observer = new MutationObserver(handleMutation);\n  observer.observe(observeTarget, {\n    attributes: true\n  });\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/anima-numeros.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/animacao-scroll.js"
+/*!***************************************!*\
+  !*** ./js/modules/animacao-scroll.js ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initAnimacaoScroll)\n/* harmony export */ });\nfunction initAnimacaoScroll() {\n  var sections = document.querySelectorAll('[data-anime=\"scroll\"]');\n  var windowMetade = window.innerHeight * 0.6;\n  function animaScroll() {\n    sections.forEach(function (section) {\n      var sectionTop = section.getBoundingClientRect().top;\n      var isSectionVisible = sectionTop - windowMetade < 0;\n      if (isSectionVisible) {\n        section.classList.add(\"ativo\");\n      } else if (section.classList.contains(\"ativo\")) {\n        section.classList.remove(\"ativo\");\n      }\n    });\n  }\n  if (sections.length) {\n    var _windowMetade = window.innerHeight * 0.6;\n    animaScroll();\n    window.addEventListener(\"scroll\", animaScroll);\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/animacao-scroll.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/dropdown-menu.js"
+/*!*************************************!*\
+  !*** ./js/modules/dropdown-menu.js ***!
+  \*************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initDropdownMenu)\n/* harmony export */ });\n/* harmony import */ var _outsideclick_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./outsideclick.js */ \"./js/modules/outsideclick.js\");\n\nfunction initDropdownMenu() {\n  var dropdownMenus = document.querySelectorAll('[data-dropdown=\"\"]');\n  dropdownMenus.forEach(function (menu) {\n    [\"touchstart\", \"click\"].forEach(function (userEvent) {\n      menu.addEventListener(userEvent, handleClick);\n    });\n  });\n  function handleClick(event) {\n    var _this = this;\n    event.preventDefault();\n    this.classList.add(\"active\");\n    (0,_outsideclick_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(this, [\"touchstart\", \"click\"], function () {\n      _this.classList.remove(\"active\");\n    });\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/dropdown-menu.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/fetch-animais.js"
+/*!*************************************!*\
+  !*** ./js/modules/fetch-animais.js ***!
+  \*************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initFetchAnimais)\n/* harmony export */ });\n/* harmony import */ var _anima_numeros_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./anima-numeros.js */ \"./js/modules/anima-numeros.js\");\nfunction _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = \"function\" == typeof Symbol ? Symbol : {}, n = r.iterator || \"@@iterator\", o = r.toStringTag || \"@@toStringTag\"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, \"_invoke\", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError(\"Generator is already running\"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = \"next\"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError(\"iterator result is not an object\"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i[\"return\"]) && t.call(i), c < 2 && (u = TypeError(\"The iterator does not provide a '\" + o + \"' method\"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, \"GeneratorFunction\")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, \"constructor\", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, \"constructor\", GeneratorFunction), GeneratorFunction.displayName = \"GeneratorFunction\", _regeneratorDefine2(GeneratorFunctionPrototype, o, \"GeneratorFunction\"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, \"Generator\"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, \"toString\", function () { return \"[object Generator]\"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }\nfunction _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, \"\", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o(\"next\", 0), o(\"throw\", 1), o(\"return\", 2)); }, _regeneratorDefine2(e, r, n, t); }\nfunction asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }\nfunction _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, \"next\", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, \"throw\", n); } _next(void 0); }); }; }\n;\nfunction initFetchAnimais() {\n  function fetchAnimais(_x) {\n    return _fetchAnimais.apply(this, arguments);\n  }\n  function _fetchAnimais() {\n    _fetchAnimais = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(url) {\n      var animaisResponse, animaisJson, numerosGrid, _t;\n      return _regenerator().w(function (_context) {\n        while (1) switch (_context.p = _context.n) {\n          case 0:\n            _context.p = 0;\n            _context.n = 1;\n            return fetch(url);\n          case 1:\n            animaisResponse = _context.v;\n            _context.n = 2;\n            return animaisResponse.json();\n          case 2:\n            animaisJson = _context.v;\n            numerosGrid = document.querySelector(\".numeros-grid\");\n            animaisJson.forEach(function (animal) {\n              var divAnimal = createAnimal(animal);\n              numerosGrid.appendChild(divAnimal);\n            });\n            (0,_anima_numeros_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n            _context.n = 4;\n            break;\n          case 3:\n            _context.p = 3;\n            _t = _context.v;\n            console.log(_t);\n          case 4:\n            return _context.a(2);\n        }\n      }, _callee, null, [[0, 3]]);\n    }));\n    return _fetchAnimais.apply(this, arguments);\n  }\n  function createAnimal(animal) {\n    var div = document.createElement(\"div\");\n    div.classList.add(\"numero-animal\");\n    div.innerHTML = \"<h3>\".concat(animal.specie, \"</h3><span data-numero>\").concat(animal.total, \"</span>\");\n    return div;\n  }\n  fetchAnimais(\"./animaisapi.json\");\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/fetch-animais.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/fetch-bitcoin.js"
+/*!*************************************!*\
+  !*** ./js/modules/fetch-bitcoin.js ***!
+  \*************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initFetchBitcoin)\n/* harmony export */ });\nfunction initFetchBitcoin() {}\nfetch(\"https://blockchain.info/ticker\").then(function (response) {\n  return response.json();\n}).then(function (json) {\n  var btcPreco = document.querySelector(\".btc-preco\");\n  btcPreco.innerText = (1000 / json.BRL.sell).toFixed(4);\n})[\"catch\"](function (erro) {\n  console.log(erro);\n});\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/fetch-bitcoin.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/funcionamento.js"
+/*!*************************************!*\
+  !*** ./js/modules/funcionamento.js ***!
+  \*************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initFuncionamento)\n/* harmony export */ });\nfunction initFuncionamento() {\n  var funcionamento = document.querySelector(\"[data-semana]\");\n  var diasSemana = funcionamento.dataset.semana.split(\",\").map(Number);\n  var horarioSemana = funcionamento.dataset.horario.split(\",\").map(Number);\n  var dataAgora = new Date();\n  var diaAgora = dataAgora.getDay();\n  var horarioAgora = dataAgora.getHours();\n  var semanaAberto = diasSemana.indexOf(diaAgora) !== -1;\n  var horarioAberto = horarioAgora >= horarioSemana[0] && horarioAgora < horarioSemana[1];\n  if (semanaAberto && horarioAberto) {\n    funcionamento.classList.add(\"aberto\");\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/funcionamento.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/menu-mobile.js"
+/*!***********************************!*\
+  !*** ./js/modules/menu-mobile.js ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initMenuMobile)\n/* harmony export */ });\n/* harmony import */ var _outsideclick_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./outsideclick.js */ \"./js/modules/outsideclick.js\");\n\nfunction initMenuMobile() {\n  var menuButton = document.querySelector('[data-menu=\"button\"]');\n  var menuList = document.querySelector('[data-menu=\"list\"]');\n  var eventos = [\"click\", \"touchstart\"];\n  function openMenu(event) {\n    menuList.classList.add(\"active\");\n    menuButton.classList.add(\"active\");\n    (0,_outsideclick_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(menuList, [\"click\", \"touchstart\"], function () {\n      menuList.classList.remove(\"active\");\n      menuButton.classList.remove(\"active\");\n    });\n  }\n  eventos.forEach(function (userEvent) {\n    menuButton.addEventListener(userEvent, openMenu);\n  });\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/menu-mobile.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/modal.js"
+/*!*****************************!*\
+  !*** ./js/modules/modal.js ***!
+  \*****************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initModal)\n/* harmony export */ });\nfunction initModal() {\n  var botaoAbrir = document.querySelector('[data-modal=\"abrir\"]');\n  var botaoFechar = document.querySelector('[data-modal=\"fechar\"]');\n  var containerModal = document.querySelector('[data-modal=\"container\"]');\n  function abrirModal(event) {\n    event.preventDefault();\n    containerModal.classList.add(\"ativo\");\n  }\n  function fecharModal(event) {\n    event.preventDefault();\n    containerModal.classList.remove(\"ativo\");\n  }\n  function cliqueForaModal(event) {\n    if (event.target === this) {\n      fecharModal(event);\n    }\n  }\n  if (botaoAbrir && botaoFechar && containerModal) {\n    botaoAbrir.addEventListener(\"click\", abrirModal);\n    botaoFechar.addEventListener(\"click\", fecharModal);\n    containerModal.addEventListener(\"click\", cliqueForaModal);\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/modal.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/outsideclick.js"
+/*!************************************!*\
+  !*** ./js/modules/outsideclick.js ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ outsideClick)\n/* harmony export */ });\nfunction outsideClick(element, events, callback) {\n  var html = document.documentElement;\n  var outside = \"data-outside\";\n  if (!element.hasAttribute(outside)) {\n    events.forEach(function (userEvent) {\n      setTimeout(function () {\n        html.addEventListener(userEvent, handleOusideClick);\n      });\n    });\n    element.setAttribute(outside, \"\");\n  }\n  function handleOusideClick(event) {\n    if (!element.contains(event.target)) {\n      element.removeAttribute(outside);\n      events.forEach(function (userEvent) {\n        html.removeEventListener(userEvent, handleOusideClick);\n      });\n      callback();\n    }\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/outsideclick.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/scroll-suave.js"
+/*!************************************!*\
+  !*** ./js/modules/scroll-suave.js ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initScrollSuave)\n/* harmony export */ });\nfunction initScrollSuave() {\n  var linksInternos = document.querySelectorAll('[data-menu=\"suave\"] a[href^=\"#\"]');\n  function scrollToSection(event) {\n    event.preventDefault();\n    var href = this.getAttribute(\"href\");\n    var section = document.querySelector(href);\n    section.scrollIntoView({\n      behavior: \"smooth\",\n      block: \"start\"\n    });\n  }\n  linksInternos.forEach(function (link) {\n    link.addEventListener(\"click\", scrollToSection);\n  });\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/scroll-suave.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/tabnav.js"
+/*!******************************!*\
+  !*** ./js/modules/tabnav.js ***!
+  \******************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initTabNav)\n/* harmony export */ });\nfunction initTabNav() {\n  var tabMenu = document.querySelectorAll('[data-tab=\"menu\"] li');\n  var tabContent = document.querySelectorAll('[data-tab=\"content\"] section');\n  tabContent[0].classList.add(\"ativo\");\n  function activeTab(index) {\n    var direcao = tabContent[index].dataset.anime;\n    tabContent.forEach(function (section) {\n      section.classList.remove(\"ativo\", direcao);\n    });\n    tabContent[index].classList.add(\"ativo\", direcao);\n  }\n  if (tabMenu.length && tabContent.length) {\n    tabMenu.forEach(function (itemMenu, index) {\n      itemMenu.addEventListener(\"click\", function () {\n        activeTab(index);\n      });\n    });\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/tabnav.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/tooltip.js"
+/*!*******************************!*\
+  !*** ./js/modules/tooltip.js ***!
+  \*******************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initTooltip)\n/* harmony export */ });\nfunction initTooltip() {\n  var tooltips = document.querySelectorAll(\"[data-tooltip]\");\n  tooltips.forEach(function (item) {\n    item.addEventListener(\"mouseover\", onMouseOver);\n  });\n  function onMouseOver(event) {\n    var tooltipBox = criarTooltipBox(this);\n    onMouseMove.tooltipBox = tooltipBox;\n    this.addEventListener(\"mousemove\", onMouseMove);\n    onMouseLeave.tooltipBox = tooltipBox;\n    onMouseLeave.element = this;\n    this.addEventListener(\"mouseleave\", onMouseLeave);\n  }\n  var onMouseLeave = {\n    handleEvent: function handleEvent() {\n      this.tooltipBox.remove();\n      this.element.removeEventListener(\"mouseleave\", onMouseLeave);\n      this.element.removeEventListener(\"mousemove\", onMouseMove);\n    }\n  };\n  var onMouseMove = {\n    handleEvent: function handleEvent(event) {\n      this.tooltipBox.style.top = event.pageY + 20 + \"px\";\n      this.tooltipBox.style.left = event.pageX + 20 + \"px\";\n    }\n  };\n  function criarTooltipBox(element) {\n    var tooltipBox = document.createElement(\"div\");\n    var text = element.getAttribute(\"aria-label\");\n    tooltipBox.classList.add(\"tooltip\");\n    tooltipBox.innerText = text;\n    document.body.appendChild(tooltipBox);\n    return tooltipBox;\n  }\n}\n\n//# sourceURL=webpack://animais-fantasticos/./js/modules/tooltip.js?\n}");
+
+/***/ },
+
+/***/ "./js/script.js"
+/*!**********************!*\
+  !*** ./js/script.js ***!
+  \**********************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_scroll_suave_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/scroll-suave.js */ \"./js/modules/scroll-suave.js\");\n/* harmony import */ var _modules_animacao_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/animacao-scroll.js */ \"./js/modules/animacao-scroll.js\");\n/* harmony import */ var _modules_accordion_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/accordion.js */ \"./js/modules/accordion.js\");\n/* harmony import */ var _modules_tabnav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tabnav.js */ \"./js/modules/tabnav.js\");\n/* harmony import */ var _modules_modal_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal.js */ \"./js/modules/modal.js\");\n/* harmony import */ var _modules_tooltip_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/tooltip.js */ \"./js/modules/tooltip.js\");\n/* harmony import */ var _modules_dropdown_menu_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/dropdown-menu.js */ \"./js/modules/dropdown-menu.js\");\n/* harmony import */ var _modules_menu_mobile_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/menu-mobile.js */ \"./js/modules/menu-mobile.js\");\n/* harmony import */ var _modules_funcionamento_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/funcionamento.js */ \"./js/modules/funcionamento.js\");\n/* harmony import */ var _modules_fetch_animais_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/fetch-animais.js */ \"./js/modules/fetch-animais.js\");\n/* harmony import */ var _modules_fetch_bitcoin_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/fetch-bitcoin.js */ \"./js/modules/fetch-bitcoin.js\");\n\n\n\n\n\n\n\n\n\n\n\n(0,_modules_scroll_suave_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n(0,_modules_animacao_scroll_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_accordion_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n(0,_modules_tabnav_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n(0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n(0,_modules_tooltip_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\n(0,_modules_dropdown_menu_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\n(0,_modules_menu_mobile_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])();\n(0,_modules_funcionamento_js__WEBPACK_IMPORTED_MODULE_8__[\"default\"])();\n(0,_modules_fetch_animais_js__WEBPACK_IMPORTED_MODULE_9__[\"default\"])();\n(0,_modules_fetch_bitcoin_js__WEBPACK_IMPORTED_MODULE_10__[\"default\"])();\n\n//# sourceURL=webpack://animais-fantasticos/./js/script.js?\n}");
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter/value functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	let __webpack_exports__ = __webpack_require__("./js/script.js");
+/******/ 	
+/******/ })()
+;
